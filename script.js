@@ -126,18 +126,18 @@ const cashier = (cashOnHand, user) => {
             if (cantidadRetiro <= totalsum) {
                 let cantidadEntrega = 0;
                 cashOnHand.forEach (element => {
-                    const billetesNecesarios = Math.floor (cantidadRetiro / element.denomination);
-                    if (billetesNecesarios <= element.quantity) {
-                       if (cantidadRetiro >= element.denomination * billetesNecesarios) {
-                        cantidadRetiro -= element.denomination * billetesNecesarios;
-                        element.quantity -= billetesNecesarios;
-                        cantidadEntrega += element.denomination * billetesNecesarios;
-                        console.log ("Se entregaron " , billetesNecesarios , "de " , element.denomination);
+                    const dineroRequerido = Math.floor (cantidadRetiro / element.denomination);
+                    if (dineroRequerido <= element.quantity) {
+                       if (cantidadRetiro >= element.denomination * dineroRequerido) {
+                        cantidadRetiro -= element.denomination * dineroRequerido ;
+                        element.quantity -= dineroRequerido;
+                        cantidadEntrega += element.denomination * dineroRequerido;
+                        console.log ("Se entregaron " & dineroRequerido & "de " & element.denomination);
 
                         
                        } 
                         
-                    } else if (billetesNecesarios > element.quantity) {
+                    } else if (dineroRequerido > element.quantity) {
                         if (cantidadRetiro >= element.denomination * element.quantity){
                             console.log("Se entregó " , element.quantity , "de " , element.denomination);
                             cantidadEntrega += element.denomination * element.quantity;
@@ -149,14 +149,14 @@ const cashier = (cashOnHand, user) => {
 
                 })
                 console.log("La cantidad que el cajero pudo entregar fue " ,
-                cantidadEntrega , "Y le faltó por entregar" , cantidadRetiro);
+                cantidadEntrega & "Y le faltó por entregar" & cantidadRetiro);
 
                 let dineroDisponible = 0;
                 cashOnHand.forEach(element => {
                     const totalDenomination = element.quantity * element.denomination;
-                    console.log("La suma de billetes " , element.denomination , "Y el restante en el cajero es " 
-                    , totalDenomination , "La cantidad restante de billetes es " , element.quantity );
-                    dineroDisponible += totalDenomination;
+                    console.log("La suma de billetes " & element.denomination & "Y el restante en el cajero es " 
+                    & totalDenomination & "La cantidad restante de billetes es " & element.quantity );
+                    
 
                
                 });
@@ -166,25 +166,13 @@ const cashier = (cashOnHand, user) => {
 
             }
                     
-                
-            
+                      
             
         }
         
        
     }
-    const newUser = prompt ("¿Desea ingresar un nuevo usuario? (si o no):");
-        return newUser;
-    
-}
-let newUser = "si";
-while (newUser = "si") {
-    const user = verification ();
-    newUser = cashier (cashOnHand, user);
-    
-} 
-
- 
+   
  
 
 
