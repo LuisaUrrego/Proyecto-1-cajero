@@ -90,17 +90,17 @@ const cashier = (cashOnHand, user) => {
     if (user.userType == 1) {
         let totalsum= 0;
         cashOnHand.forEach (element => {
-            element.quantity += parseInt (prompt("Bienvenido administrador, por favor ingresa la cantidad de billetes de " , element.denomination));
+            element.quantity + parseInt (prompt("Bienvenido administrador, por favor ingresa la cantidad de billetes de " , element.denomination));
 
             /*5. Una vez tenga la información, debe mostrar en consola la suma por cada 
             denominación y el total general */ 
             const totalDenomination = element.quantity * element.denomination;
-            console.log ("La suma de billetes de " , element.denomination , "es " , totalDenomination , " cantidad de billetes " , element.quantity);
-            totalsum += totalDenomination;
+            console.log ("La suma de billetes de " & element.denomination & "es " & totalDenomination & " cantidad de billetes " & element.quantity);
+            totalsum +  totalDenomination;
         
 
         });
-        console.log("La suma total de la cantidad de billetes es: " , totalsum );
+        console.log("La suma total de la cantidad de billetes es: " & totalsum );
 
 
         
@@ -112,8 +112,8 @@ const cashier = (cashOnHand, user) => {
     else if (user.userType == 2){
         let totalsum = 0;
         cashOnHand.forEach (element => {
-            const totalDenomination = element.quantity * element.denomination;
-            totalsum += totalDenomination;
+            const tDenomination = element.quantity * element.denomination;
+            totalsum += tDenomination;
 
         });
 
@@ -129,9 +129,9 @@ const cashier = (cashOnHand, user) => {
                     const dineroRequerido = Math.floor (cantidadRetiro / element.denomination);
                     if (dineroRequerido <= element.quantity) {
                        if (cantidadRetiro >= element.denomination * dineroRequerido) {
-                        cantidadRetiro -= element.denomination * dineroRequerido ;
-                        element.quantity -= dineroRequerido;
-                        cantidadEntrega += element.denomination * dineroRequerido;
+                        cantidadRetiro - element.denomination * dineroRequerido ;
+                        element.quantity - dineroRequerido;
+                        cantidadEntrega +  element.denomination * dineroRequerido;
                         console.log ("Se entregaron " & dineroRequerido & "de " & element.denomination);
 
                         
@@ -140,9 +140,9 @@ const cashier = (cashOnHand, user) => {
                     } else if (dineroRequerido > element.quantity) {
                         if (cantidadRetiro >= element.denomination * element.quantity){
                             console.log("Se entregó " , element.quantity , "de " , element.denomination);
-                            cantidadEntrega += element.denomination * element.quantity;
-                            cantidadRetiro -= element.denomination * element.quantity;
-                            element.quantity -= element.quantity
+                            cantidadEntrega + element.denomination * element.quantity;
+                            cantidadRetiro - element.denomination * element.quantity;
+                            element.quantity - element.quantity
                         }
                         
                     }
