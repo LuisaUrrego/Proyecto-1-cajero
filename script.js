@@ -94,9 +94,9 @@ const cashier = (cashOnHand, user) => {
 
             /*5. Una vez tenga la información, debe mostrar en consola la suma por cada 
             denominación y el total general */ 
-            const totalDenomination = element.quantity * element.denomination;
+            const tDenomination = element.quantity * element.denomination;
             console.log ("La suma de billetes de " & element.denomination & "es " & totalDenomination & " cantidad de billetes " & element.quantity);
-            totalsum +  totalDenomination;
+            totalsum +  tDenomination;
         
 
         });
@@ -153,9 +153,9 @@ const cashier = (cashOnHand, user) => {
 
                 let dineroDisponible = 0;
                 cashOnHand.forEach(element => {
-                    const totalDenomination = element.quantity * element.denomination;
+                    const tDenomination = element.quantity * element.denomination;
                     console.log("La suma de billetes " & element.denomination & "Y el restante en el cajero es " 
-                    & totalDenomination & "La cantidad restante de billetes es " & element.quantity );
+                    & tDenomination & "La cantidad restante de billetes es " & element.quantity );
                     
 
                
